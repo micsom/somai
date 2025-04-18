@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  somai-api:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - DEVICE_API_KEY=${DEVICE_API_KEY}
+    restart: unless-stopped
